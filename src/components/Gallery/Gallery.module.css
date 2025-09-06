@@ -1,0 +1,30 @@
+.section {
+    height: 100%;
+    padding: 5rem 5vw 5rem 5vw;
+}
+
+.gallery {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    width: 100%;
+}
+
+.imageContainer {
+    display: flex;
+    align-items: flex-start;
+}
+
+.image {
+    border-radius: 2rem;
+    height: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
