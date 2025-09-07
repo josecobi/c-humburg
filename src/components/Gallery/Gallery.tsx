@@ -89,7 +89,8 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
               style={{ width: itemWidth }}
               initial={{ opacity: 0, y: yInitial, x: xInitial, rotate: rotate, scale: scale }}
               whileInView={{ opacity: 1, y: 0, x: 0, rotate: rotateEnd, scale: scaleEnd }}
-              transition={{ duration: 0.5, delay: delay, ease: "easeOut" }}
+              // animate={{ x: 0, y: 0, rotate: [rotate, rotateEnd + 5, rotateEnd], scale: 1 }}
+              transition={{ type: "spring", stiffness: 250, damping: 20, mass: 1, duration: 0.5, delay: delay, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
               <Image
