@@ -17,10 +17,12 @@ import image2 from '@/images/photos/hayek_avon.jpg'
 import image1 from '@/images/photos/lady-in-the-lake-poster.jpg'
 import image3 from '@/images/photos/home_09.jpg'
 import image4 from '@/images/photos/home_21-no-border.jpg'
-import bigLittleLiesWide from '@/images/photos/posters-landscape/big-little-lies.jpg'
-import sharpObjects from '@/images/photos/posters-landscape/sharp-objects.jpg'
-import ladyInTheLake from '@/images/photos/posters-landscape/lady-in-the-lake.jpg'
+import bigLittleLiesWide from '@/images/services/big-little-lies.jpg'
+import ladyCar from '@/images/services/lady-car.jpg'
+import bodyPaint from '@/images/services/body-face-paint.jpg'
 import Gallery from '@/components/Gallery/Gallery'
+import emmy from '@/images/logos/emmy-statuette-gold.svg'
+import { services } from '@/data/services'
 
 function SocialLink({
   icon: Icon,
@@ -88,11 +90,14 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Make Up & Hair Design
+            MAKE UP & HAIR DESIGNER
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Claudia, a Make Up and Hair Artist based in Baltimore. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-          </p>
+          <div className="flex items-start gap-2 max-w-xl">
+            <Image src={emmy} alt="Award" className="inline h-14 w-14 mr-2 drop-shadow-lg" />
+            <h2 className="mt-6 text-xl text-zinc-700 font-bold dark:text-zinc-400">
+              Nominated for 2 Primetime Emmy Awards
+            </h2>
+          </div>
           {/* <div className="mt-6 flex gap-6">
             <SocialLink
               href="#"
@@ -106,11 +111,11 @@ export default async function Home() {
      
       <Container className="mt-24 md:mt-28">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            MAKE UP + HAIR DESIGN
+            On Location Services
           </h2>
-        <CardLeft image={bigLittleLiesWide} alt="Big Little Lies poster movie - Landscape"/>
-        <CardRight image={sharpObjects} alt="Sharp Objects poster movie - Landscape" />
-        <CardLeft image={ladyInTheLake} alt="Big Little Lies poster movie - Landscape"/>
+        <CardLeft image={services[0].image} alt={services[0].alt} title={services[0].title} description={services[0].description} link={services[0].link} />
+        <CardRight image={services[1].image} alt={services[1].alt} title={services[1].title} description={services[1].description} link={services[1].link} />
+        <CardLeft image={services[2].image} alt={services[2].alt} title={services[2].title} description={services[2].description} link={services[2].link} />
 
         
       </Container>
