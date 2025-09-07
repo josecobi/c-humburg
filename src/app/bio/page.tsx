@@ -69,11 +69,11 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I'm Claudia Humburg. I live in Baltimore, where I ...
+            I`&apos;`m Claudia Humburg. I live in Baltimore, where I ...
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              Claudia Humburg began her journey in the beauty industry in Germany. Growing up in her mom's hair and make up salon, she developed an early passion for beauty. Claudia was drawn to color, texture and shape and as an aspiring artist, she began training at the Art Institute of Cologne, known there as, “Die Maske” to earn a degree in Art. She later attended numerous workshops and seminars given at the International Make-up School, by Madame Vare in Paris, at the Typolo in Italy, given by Tina Farina and at the Claudia HumburgKryolan GmbH Germany and by Joe Blasco in the USA. Her training has been very international in scope which later lead to her success in the entertainment industry.
+              Claudia Humburg began her journey in the beauty industry in Germany. Growing up in her mom`&apos;`s hair and make up salon, she developed an early passion for beauty. Claudia was drawn to color, texture and shape and as an aspiring artist, she began training at the Art Institute of Cologne, known there as, “Die Maske” to earn a degree in Art. She later attended numerous workshops and seminars given at the International Make-up School, by Madame Vare in Paris, at the Typolo in Italy, given by Tina Farina and at the Claudia HumburgKryolan GmbH Germany and by Joe Blasco in the USA. Her training has been very international in scope which later lead to her success in the entertainment industry.
             </p>
             <p>
               As a professional Hair Stylist, Claudia received her journeyman certificate at the international school of hair, “Inter Studio Harder”, in Duisburg Germany. It was not long before Claudia grew into a very sought after make-up and hair artist within the German Entertainment industry where she gained considerable experience with numerous movies and commercial projects.
@@ -84,7 +84,7 @@ export default function About() {
               In 1998 the German movie, “Marlene Dietrich”, brought Claudia to Los Angeles, and she soon decided to transfer her professional services to Southern California. She started her company, Make-Over Consulting and Services, in 2000.
             </p>
             <p>
-              In 2003, Claudia signed with the famous Fred Segal Beauty Agency of Beverly Hills, CA. Represented by the agency, Claudia worked on many projects that included photo shoots, fashion shows and commercials for clients like US Bank, Mattel, Target, Blackberry, Disney, Hershey's, Citibank and Toyota, to just name a few. Her work was featured in many magazines that include among others, UK Vogue, In Style, Lucky, Glamour, People, Vanity Fair and Vogue.
+              In 2003, Claudia signed with the famous Fred Segal Beauty Agency of Beverly Hills, CA. Represented by the agency, Claudia worked on many projects that included photo shoots, fashion shows and commercials for clients like US Bank, Mattel, Target, Blackberry, Disney, Hershey`&apos;`s, Citibank and Toyota, to just name a few. Her work was featured in many magazines that include among others, UK Vogue, In Style, Lucky, Glamour, People, Vanity Fair and Vogue.
             </p>
             <p>
               In 2005, Claudia began work with 2 companies, Smashbox Cosmetic Company and Photogenics Agency. Today Claudia is a highly recognized celebrity Make-up and Hair Artist. Her clients include well-known personalities such as, Antonio Villaragosa, Cate Blanchett, David Hyde Pierce, David Morse, Jordana Brewster, Keri Russel, Kyra Sedgwick, Liza Minnelli, Mira Sorvino, Uma Thurman and Milla Jovoich.

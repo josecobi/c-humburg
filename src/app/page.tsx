@@ -1,3 +1,5 @@
+'use client'
+import dynamic from "next/dynamic";
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -23,6 +25,11 @@ import bodyPaint from '@/images/services/body-face-paint.jpg'
 import Gallery from '@/components/Gallery/Gallery'
 import emmy from '@/images/logos/emmy-statuette-gold.svg'
 import { services } from '@/data/services'
+
+const MasonryGallery = dynamic(
+  () => import("@/components/Gallery/Gallery"),
+  { ssr: false } // disables server-side rendering
+);
 
 function SocialLink({
   icon: Icon,
@@ -124,13 +131,13 @@ export default async function Home() {
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Portfolio Highlights
           </h2>
-        <Gallery images={imagesPortHighlight}/>
+        <MasonryGallery images={imagesPortHighlight}/>
       </Container>
       <Container className="mt-24 md:mt-28">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Behind the Scene
           </h2>
-        <Gallery images={imagesBehindScenes}/>
+        <MasonryGallery images={imagesBehindScenes}/>
       </Container>
     </>
   )
