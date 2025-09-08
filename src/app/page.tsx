@@ -1,8 +1,11 @@
 'use client'
 import dynamic from "next/dynamic";
-import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
+
 
 import { Button } from '@/components/Button'
 import CardLeft  from '@/components/CardLeft'
@@ -44,50 +47,120 @@ function SocialLink({
   )
 }
 
+type PhotoProps = {
+  images: StaticImageData[];
+};
 
-function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+export function Photos({ images }: PhotoProps) {
+  const rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"];
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Auto-cycle for slideshow (mobile)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-2/3 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+    <div className="relative mt-16 sm:mt-20 w-full">
+      {/* 📱 Mobile → Slideshow with blurred background */}
+      <div className="relative flex justify-center items-center sm:hidden">
+        {/* Background blur */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src={images[activeIndex]}
+            alt=""
+            fill
+            className="object-cover blur-3xl scale-110 opacity-70"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+        </div>
 
-            {/* <div className="relative aspect-[2/3] w-44 sm:w-72"> */}
-              {/* Blurred background */}
-              {/* <Image
-                src={image}
+        {/* Foreground slideshow */}
+        <div className="relative w-4/5 max-w-xs aspect-[2/3] overflow-hidden rounded-xl shadow-2xl sm:max-w-md">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={images[activeIndex]}
                 alt=""
                 fill
-                className="absolute inset-0 object-cover blur-lg scale-110"
-              /> */}
-              {/* Actual image */}
-              {/* <Image
-                src={image}
-                alt=""
-                fill
-                className="absolute inset-0 object-contain"
+                className="object-cover"
+                priority
               />
-            </div> */}
-          </div>
-        ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
+
+      {/* 💻 Desktop → Collage */}
+<div className="-my-4 hidden justify-center gap-5 overflow-hidden py-4 sm:flex sm:gap-8">
+  {images.map((image, i) => (
+    <motion.div
+      key={i}
+      className={clsx(
+        "relative aspect-2/3 w-40 sm:w-64 md:w-72 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800",
+        rotations[i % rotations.length]
+      )}
+      initial={{ opacity: 0, y: 20 }}          // start slightly down and invisible
+      whileInView={{ opacity: 1, y: 0 }}       // fade in and move to natural position
+      transition={{
+        duration: 0.8,
+        delay: i * 0.15,                      // stagger the images slightly
+        ease: "easeOut",
+      }}
+      viewport={{ once: true, amount: 0.3 }}   // animate only once when in view
+    >
+      <Image
+        src={image}
+        alt=""
+        sizes="(min-width: 640px) 18rem, 11rem"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+    </motion.div>
+  ))}
+</div>
     </div>
-  )
+  );
 }
+
+
+// function Photos() {
+//   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+
+//   return (
+//     <div className="mt-16 sm:mt-20">
+//       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+//         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+//           <div
+//             key={image.src}
+//             className={clsx(
+//               'relative aspect-2/3 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+//               rotations[imageIndex % rotations.length],
+//             )}
+//           >
+//             <Image
+//               src={image}
+//               alt=""
+//               sizes="(min-width: 640px) 18rem, 11rem"
+//               className="absolute inset-0 h-full w-full object-cover"
+//             />
+
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
 
 export default async function Home() {
 
@@ -101,7 +174,7 @@ export default async function Home() {
           </h1>
           <div className="flex items-start gap-2 max-w-xl">
             <Image src={emmy} alt="Award" className="inline h-14 w-14 mr-2 drop-shadow-lg" />
-            <h2 className="mt-6 text-xl text-zinc-700 font-bold dark:text-zinc-400">
+            <h2 className="mt-6 text-xl text-zinc-700 font-bold dark:text-zinc-200">
               Nominated for 2 Primetime Emmy Awards
             </h2>
           </div>
@@ -114,7 +187,7 @@ export default async function Home() {
           </div> */}
         </div>
       </Container>
-       <Photos />
+       <Photos images={[image1, image2, image3, image4, image5]}/>
      
       <Container className="mt-24 md:mt-28">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">

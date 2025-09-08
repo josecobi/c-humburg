@@ -22,8 +22,8 @@ export default function CardLeft({ image, alt, title, description }: CardLeftPro
       />
                
       <div>
-        <h4 className="text-lg font-bold text-gray-900 order">{title}</h4>
-        <p className="mt-1 text-gray-500">
+        <h4 className="text-lg font-bold text-gray-900 order dark:text-zinc-100">{title}</h4>
+        <p className="mt-1 text-gray-500 dark:text-zinc-200">
           {description}
         </p>
       </div>

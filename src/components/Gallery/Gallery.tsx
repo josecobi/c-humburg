@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useRef } from "react";
 import Masonry from "masonry-layout";
@@ -10,21 +10,23 @@ type GalleryImage = {
   width?: number;
   height?: number;
   alt?: string;
-  span?: number; // number of columns to span
-  rotate?: number; // degrees to rotate
-  delay?: number; // animation delay
-  direction?: string; // animation direction
+  span?: number; 
+  rotate?: number;
+  delay?: number;
+  direction?: string;
   xInitial?: number;
   rotateInitial?: number;
   yInitial?: number;
   rotateEnd?: number;
-  scaleInitial?: number;
+  scale?: number;
+  scaleEnd?: number;
+  opacityInitial?: number;
 };
 
 type MasonryGalleryProps = {
   images: GalleryImage[];
-  columnWidth?: number; // in px
-  gutter?: number; // in px
+  columnWidth?: number;
+  gutter?: number;
 };
 
 const MasonryGallery: React.FC<MasonryGalleryProps> = ({
@@ -39,58 +41,71 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
 
     const msnry = new Masonry(gridRef.current, {
       itemSelector: ".grid-item",
-      columnWidth: columnWidth,
-      gutter: gutter,
+      columnWidth,
+      gutter,
       percentPosition: false,
       horizontalOrder: true,
     });
 
-    // Re-layout after each image loads
     const imgs = gridRef.current.querySelectorAll("img");
     imgs.forEach((img) => {
       img.addEventListener("load", () => {
-        if (msnry && typeof msnry.layout === "function") {
-          msnry.layout();
-        }
+        msnry?.layout?.();
       });
     });
 
     return () => {
-      if (msnry && typeof msnry.destroy === "function") {
-        msnry.destroy();
-      }
+      msnry?.destroy?.();
     };
   }, [images, columnWidth, gutter]);
 
   return (
     <section className="px-4 py-12">
       <div ref={gridRef} className="relative">
-        {/* invisible grid-sizer element to help Masonry calculate columns */}
         <div
           className="grid-sizer"
           style={{ width: columnWidth, visibility: "hidden" }}
         />
-        {images.map((img, i,) => {
+        {images.map((img, i) => {
           const span = img.span || 1;
-          const itemWidth = columnWidth * span + gutter * (span - 1); // px
           const delay = img.delay || i * 0.1;
-          const rotate = img.rotateInitial || 0;
-          const scale = img.scaleInitial || 1;
-          const rotateEnd = img.rotateEnd || 0;
-          const scaleEnd = img.scaleInitial || 1;
-          const xInitial = img.xInitial || 0;
-          const yInitial = img.yInitial || 0;
 
+          // default width based on span
+          let itemWidth = columnWidth * span + gutter * (span - 1);
+
+          // on mobile, force items to fit screen width
+          if (typeof window !== "undefined" && window.innerWidth < 640) {
+            itemWidth = window.innerWidth - gutter * 2; // padding from both sides
+          }
 
           return (
             <motion.div
               key={i}
               className="grid-item mb-4 rounded-2xl shadow-md overflow-hidden"
-              style={{ width: itemWidth }}
-              initial={{ opacity: 0, y: yInitial, x: xInitial, rotate: rotate, scale: scale }}
-              whileInView={{ opacity: 1, y: 0, x: 0, rotate: rotateEnd, scale: scaleEnd }}
-              // animate={{ x: 0, y: 0, rotate: [rotate, rotateEnd + 5, rotateEnd], scale: 1 }}
-              transition={{ type: "spring", stiffness: 250, damping: 20, mass: 1, duration: 0.5, delay: delay, ease: "easeOut" }}
+              style={{ width: itemWidth, maxWidth: "100%" }}
+              initial={{
+                opacity: 0,
+                y: img.yInitial || 0,
+                x: img.xInitial || 0,
+                rotate: img.rotateInitial || 0,
+                scale: img.scale || 1,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                x: 0,
+                rotate: img.rotateEnd || 0,
+                scale: img.scaleEnd || 1,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 250,
+                damping: 20,
+                mass: 1,
+                duration: 0.5,
+                delay,
+                ease: "easeOut",
+              }}
               viewport={{ once: true, amount: 0.3 }}
             >
               <Image
@@ -109,6 +124,121 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
 };
 
 export default MasonryGallery;
+
+
+// 'use client'
+
+// import React, { useEffect, useRef } from "react";
+// import Masonry from "masonry-layout";
+// import Image, { StaticImageData } from "next/image";
+// import { motion } from "framer-motion";
+
+// type GalleryImage = {
+//   src: string | StaticImageData;
+//   width?: number;
+//   height?: number;
+//   alt?: string;
+//   span?: number; // number of columns to span
+//   rotate?: number; // degrees to rotate
+//   delay?: number; // animation delay
+//   direction?: string; // animation direction
+//   xInitial?: number;
+//   rotateInitial?: number;
+//   yInitial?: number;
+//   rotateEnd?: number;
+//   scale?: number;
+//   scaleEnd?: number;
+//   opacityInitial?: number;
+// };
+
+// type MasonryGalleryProps = {
+//   images: GalleryImage[];
+//   columnWidth?: number; // in px
+//   gutter?: number; // in px
+// };
+
+// const MasonryGallery: React.FC<MasonryGalleryProps> = ({
+//   images,
+//   columnWidth = 300,
+//   gutter = 16,
+// }) => {
+//   const gridRef = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     if (!gridRef.current) return;
+
+//     const msnry = new Masonry(gridRef.current, {
+//       itemSelector: ".grid-item",
+//       columnWidth: columnWidth,
+//       gutter: gutter,
+//       percentPosition: false,
+//       horizontalOrder: true,
+//     });
+
+//     // Re-layout after each image loads
+//     const imgs = gridRef.current.querySelectorAll("img");
+//     imgs.forEach((img) => {
+//       img.addEventListener("load", () => {
+//         if (msnry && typeof msnry.layout === "function") {
+//           msnry.layout();
+//         }
+//       });
+//     });
+
+//     return () => {
+//       if (msnry && typeof msnry.destroy === "function") {
+//         msnry.destroy();
+//       }
+//     };
+//   }, [images, columnWidth, gutter]);
+
+//   return (
+//     <section className="px-4 py-12">
+//       <div ref={gridRef} className="relative">
+//         {/* invisible grid-sizer element to help Masonry calculate columns */}
+//         <div
+//           className="grid-sizer"
+//           style={{ width: columnWidth, visibility: "hidden" }}
+//         />
+//         {images.map((img, i,) => {
+//           const span = img.span || 1;
+//           const itemWidth = columnWidth * span + gutter * (span - 1); // px
+//           const delay = img.delay || i * 0.1;
+//           const rotate = img.rotateInitial || 0;
+//           const scale = img.scale || 1;
+//           const rotateEnd = img.rotateEnd || 0;
+//           const scaleEnd = img.scaleEnd || 1;
+//           const xInitial = img.xInitial || 0;
+//           const yInitial = img.yInitial || 0;
+
+
+//           return (
+//             <motion.div
+//               key={i}
+//               className="grid-item mb-4 rounded-2xl shadow-md overflow-hidden"
+//               style={{ width: itemWidth }}
+//               initial={{ opacity: 0, y: yInitial, x: xInitial, rotate: rotate, scale: scale }}
+//               whileInView={{ opacity: 1, y: 0, x: 0, rotate: rotateEnd, scale: scaleEnd }}
+//               // animate={{ x: 0, y: 0, rotate: [rotate, rotateEnd + 5, rotateEnd], scale: 1 }}
+//               transition={{ type: "spring", stiffness: 250, damping: 20, mass: 1, duration: 0.5, delay: delay, ease: "easeOut" }}
+//               viewport={{ once: true, amount: 0.3 }}
+//             >
+//               <Image
+//                 src={img.src}
+//                 alt={img.alt || `Image ${i + 1}`}
+//                 width={img.width}
+//                 height={img.height}
+//                 className="w-full h-auto object-contain"
+//               />
+//             </motion.div>
+//           );
+//         })}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default MasonryGallery;
 
 
 
