@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import Masonry from "masonry-layout";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
 
 type GalleryImage = {
   src: string | StaticImageData;
