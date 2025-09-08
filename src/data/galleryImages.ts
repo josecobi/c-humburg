@@ -16,7 +16,7 @@ import image13PortHighlight from "@/images/photos/portfolio-highlights/13.jpg";
 export const imagesPortHighlight = [
   {
     src: image6PortHighlight,
-    delay: 0.4,
+    delay: 0.3,
     width: 1430,
     height: 752,
     span: 3,
@@ -30,7 +30,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image1PortHighlight,
-    delay: 0.6,
+    delay: 0.55,
     width: 1438,
     height: 976,
     span: 2,
@@ -44,7 +44,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image3PortHighlight,
-    delay: 0.8,
+    delay: 0.75,
     width: 600,
     height: 800,
     rotateEnd: 2,
@@ -57,7 +57,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image4PortHighlight,
-    delay: 0.8,
+    delay: 0.9,
     width: 600,
     height: 800,
     rotateEnd: -1,
@@ -70,7 +70,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image5PortHighlight,
-    delay: 0.9,
+    delay: 1.05,
     width: 600,
     height: 800,
     rotateEnd: 0.8,
@@ -83,7 +83,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image2PortHighlight,
-    delay: 1.0,
+    delay: 1.2,
     width: 600,
     height: 800,
     rotateEnd: -0.8,
@@ -96,7 +96,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image7PortHighlight,
-    delay: 1.0,
+    delay: 1.35,
     width: 600,
     height: 800,
     rotateEnd: 1,
@@ -109,7 +109,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image8PortHighlight,
-    delay: 1.0,
+    delay: 1.5,
     width: 600,
     height: 800,
     rotateEnd: -1,
@@ -122,7 +122,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image9PortHighlight,
-    delay: 1.0,
+    delay: 1.65,
     width: 600,
     height: 800,
     rotateEnd: 1.5,
@@ -135,7 +135,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image10PortHighlight,
-    delay: 1.0,
+    delay: 1.8,
     width: 600,
     height: 800,
     rotateEnd: -0.8,
@@ -148,7 +148,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image11PortHighlight,
-    delay: 1.0,
+    delay: 1.95,
     width: 600,
     height: 800,
     rotateEnd: -1.2,
@@ -161,7 +161,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image12PortHighlight,
-    delay: 1.0,
+    delay: 2.1,
     width: 600,
     height: 800,
     rotateEnd: -0.5,
@@ -174,7 +174,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image13PortHighlight,
-    delay: 1.0,
+    delay: 2.25,
     width: 600,
     height: 800,
     rotateEnd: 1.5,
@@ -232,7 +232,7 @@ export const imagesBehindScenes = [
   },
   {
     src: image4BehindScenes,
-    delay: 0.8,
+    delay: 0.75,
     rotateEnd: -2,
     rotateInitial: 12,
     xInitial: -70,
@@ -244,7 +244,7 @@ export const imagesBehindScenes = [
   {
     src: image5BehindScenes,
     delay: 1.0,
-    rotateEnd: 0.5,
+    rotateEnd: 0.9,
     rotateInitial: -5,
     xInitial: 0,
     yInitial: 50,
@@ -254,7 +254,7 @@ export const imagesBehindScenes = [
   },
   {
     src: image6BehindScenes,
-    delay: 1.0,
+    delay: 1.05,
     rotateEnd: -1,
     rotateInitial: 8,
     xInitial: -60,
@@ -265,7 +265,7 @@ export const imagesBehindScenes = [
   },
   {
     src: image7BehindScenes,
-    delay: 0.5,
+    delay: 1.2,
     rotateEnd: 1.3,
     rotateInitial: -12,
     xInitial: 70,

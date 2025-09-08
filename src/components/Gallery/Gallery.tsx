@@ -100,9 +100,9 @@ const MasonryGallery: React.FC<MasonryGalleryProps> = ({
               }}
               transition={{
                 type: "spring",
-                stiffness: 250,
-                damping: 20,
-                mass: 1,
+                stiffness: 80,
+                damping: 18,
+                mass: 1.2,
                 duration: 0.5,
                 delay,
                 ease: "easeOut",
