@@ -22,7 +22,7 @@ import image4 from '@/images/photos/home_21-no-border.jpg'
 import bigLittleLiesWide from '@/images/services/big-little-lies.jpg'
 import ladyCar from '@/images/services/lady-car.jpg'
 import bodyPaint from '@/images/services/body-face-paint.jpg'
-import Gallery from '@/components/Gallery/Gallery'
+import ClientPolaroidGallery from '@/components/Gallery/ClientPolaroidGallery'
 import emmy from '@/images/logos/emmy-statuette-gold.svg'
 import { services } from '@/data/services'
 import ClientMasonryGallery from "@/components/Gallery/ClientMasonryGallery";
@@ -81,7 +81,7 @@ export default async function Home() {
   return (
     <>
     
-      <Container className="mt-9">
+      <Container className="mt-9 hidden md:block">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             MAKE UP & HAIR DESIGNER
@@ -101,7 +101,13 @@ export default async function Home() {
           </div> */}
         </div>
       </Container>
-       <Photos images={[image1, image2, image3, image4, image5]}/>
+      <Photos
+        images={[image1, image2, image3, image4, image5]}
+        heroTitle="MAKE UP & HAIR DESIGNER"
+        heroSubtitle="Nominated for 2 Primetime Emmy Awards"
+        name="Claudia Humburg"
+      />
+       {/* <Photos images={[image1, image2, image3, image4, image5]}/> */}
      
       <Container className="mt-24 md:mt-28">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
@@ -124,7 +130,7 @@ export default async function Home() {
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Behind the Scene
           </h2>
-        <ClientMasonryGallery images={imagesBehindScenes}/>
+        <ClientPolaroidGallery images={imagesBehindScenes}/>
       </Container>
     </>
   )
