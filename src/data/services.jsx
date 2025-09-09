@@ -12,14 +12,15 @@ export const services = [
           Character Makeup for individuals and groups for movies, TV shows and commercials. Including
           period looks, old age, beards & bald caps, onset SFX.
         </p>
+        {/* <p className="mt-1 text-gray-500 dark:text-zinc-200">
+          Experienced in creating diverse looks that enhance character portrayal and meet production needs.
+        </p> */}
         <p className="mt-1 text-gray-500 dark:text-zinc-200">
-          <strong>Nominated for 2 Primetime Emmy Awards </strong> for my work on <em>Big Little Lies</em>.
+          <strong>Nominated for 2 Primetime Emmy Awards </strong> for my work on <span className="text-fuchsia-300 font-semibold"><em>Big Little Lies</em>.</span>
           <br />
           Affiliation: <span className="font-semibold">IATSE, local 706</span>.
         </p>
-        <p className="mt-1 text-gray-500 dark:text-zinc-200">
-          Experienced in creating diverse looks that enhance character portrayal and meet production needs.
-        </p>
+        
       </>
     ),
     image: bigLittleLiesWide,
@@ -32,7 +33,7 @@ export const services = [
     (
       <> 
         <p className="mt-1 text-gray-500 dark:text-zinc-200">
-          Beauty makeup, natural, no-makeup look glow, fashion, red carpet, Weddings. Skilled in creating high-impact looks that align with brand aesthetics and captivate audiences.
+          Beauty makeup, natural, no-makeup look glow, fashion, red carpet, and Weddings. Skilled in creating high-impact looks that align with brand aesthetics and captivate audiences.
         </p>
       </>
     ),
