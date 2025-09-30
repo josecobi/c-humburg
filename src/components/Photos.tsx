@@ -67,12 +67,12 @@ export default function Photos({ images }: PhotoProps) {
       </div>
 
       {/* 💻 Desktop → Collage */}
-      <div className="-my-4 hidden justify-center gap-5 overflow-hidden py-4 sm:flex sm:gap-8">
+      <div className="-my-4 hidden justify-center gap-5 flex-shrink  px-4 py-4 sm:flex sm:gap-8">
         {images.map((image, i) => (
           <motion.div
             key={i}
             className={clsx(
-              "relative aspect-2/3 w-40 sm:w-64 md:w-72 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800",
+              "relative aspect-2/3 w-40 sm:w-64 md:w-72 flex rounded-xl bg-zinc-100 dark:bg-zinc-800",
               rotations[i % rotations.length]
             )}
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +88,7 @@ export default function Photos({ images }: PhotoProps) {
               src={image}
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover rounded-xl"
             />
           </motion.div>
         ))}

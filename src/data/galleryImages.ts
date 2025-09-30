@@ -148,7 +148,7 @@ export const imagesPortHighlight = [
   },
   {
     src: image11PortHighlight,
-    delay: 1.95,
+    delay: 1.8,
     width: 600,
     height: 800,
     rotateEnd: -1.2,

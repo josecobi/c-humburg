@@ -95,7 +95,8 @@ const PolaroidGallery: React.FC<PolaroidGalleryProps> = ({
                 opacity: 1,
                 y: 0,
                 x: 0,
-                rotate: img.rotateEnd || 0,
+                rotate: 0,
+                // rotate: img.rotateEnd || 0,
                 scale: img.scaleEnd || 1,
               }}
               transition={{
