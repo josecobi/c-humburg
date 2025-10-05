@@ -22,6 +22,7 @@ type GalleryImage = {
   scale?: number;
   scaleEnd?: number;
   opacityInitial?: number;
+  transformOrigin?: string;
 };
 
 type PolaroidGalleryProps = {
@@ -82,7 +83,7 @@ const PolaroidGallery: React.FC<PolaroidGalleryProps> = ({
           return (
             <motion.div
               key={i}
-              className="grid-item mb-4 rounded-2xl shadow-xl overflow-hidden"
+              className="grid-item mb-4 rounded-2xl shadow-xl overflow-hidden bg-gray-50 "
               style={{ width: itemWidth, maxWidth: "100%" }}
               initial={{
                 opacity: 0,
@@ -90,6 +91,7 @@ const PolaroidGallery: React.FC<PolaroidGalleryProps> = ({
                 x: img.xInitial || 0,
                 rotate: img.rotateInitial || 0,
                 scale: img.scale || 1,
+                transformOrigin: img.transformOrigin || "center center",
               }}
               whileInView={{
                 opacity: 1,
@@ -110,7 +112,7 @@ const PolaroidGallery: React.FC<PolaroidGalleryProps> = ({
               }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <figure className="relative w-full bg-gray-50 p-4  rounded-xl">
+              <figure className="relative w-full p-4  rounded-xl">
               <Image
                 src={img.src}
                 alt={img.alt || `Image ${i + 1}`}

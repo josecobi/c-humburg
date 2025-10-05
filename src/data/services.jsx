@@ -8,14 +8,14 @@ export const services = [
     description:
       (
       <>
-        <p className="mt-1 text-gray-500 dark:text-zinc-200">
+        <p className="mt-1 text-lg text-gray-700 dark:text-zinc-200">
           Character Makeup for individuals and groups for movies, TV shows and commercials. Including
           period looks, old age, beards & bald caps, onset SFX.
         </p>
         {/* <p className="mt-1 text-gray-500 dark:text-zinc-200">
           Experienced in creating diverse looks that enhance character portrayal and meet production needs.
         </p> */}
-        <p className="mt-1 text-gray-500 dark:text-zinc-200">
+        <p className="mt-1 text-lg text-gray-700 dark:text-zinc-200">
           <strong>Nominated for 2 Primetime Emmy Awards </strong> for my work on <span className="text-fuchsia-300 font-semibold"><em>Big Little Lies</em>.</span>
           <br />
           Affiliation: <span className="font-semibold">IATSE, local 706</span>.
@@ -32,7 +32,7 @@ export const services = [
     description: 
     (
       <> 
-        <p className="mt-1 text-gray-500 dark:text-zinc-200">
+        <p className="mt-1 text-lg text-gray-700 dark:text-zinc-200">
           Beauty makeup, natural, no-makeup look glow, fashion, red carpet, and Weddings. Skilled in creating high-impact looks that align with brand aesthetics and captivate audiences.
         </p>
       </>
@@ -46,7 +46,7 @@ export const services = [
     description:
     (
       <> 
-        <p className="mt-1 text-gray-500 dark:text-zinc-200">
+        <p className="mt-1 text-lg text-gray-700 dark:text-zinc-200">
       Unique, creative designs for special events, runway, fashion and art projects. Specialized body and face painting services for events, performances, and artistic projects. Proficient in transforming visions into vibrant, wearable art that captivates and inspires.
         </p>
       </>

@@ -103,16 +103,14 @@ export default async function Home() {
       </Container>
       <Photos
         images={[image1, image2, image3, image4, image5]}
-        heroTitle="MAKE UP & HAIR DESIGNER"
-        heroSubtitle="Nominated for 2 Primetime Emmy Awards"
-        name="Claudia Humburg"
+       
       />
-       {/* <Photos images={[image1, image2, image3, image4, image5]}/> */}
      
       <Container className="mt-24 md:mt-28">
-        <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            On location Makeup Application and Hair Styling Services available globally
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+            Services
           </h2>
+          <h3 className="text-xl tracking-tight text-zinc-800 dark:text-zinc-100">On location Makeup Application and Hair Styling Services available globally</h3>
         <CardLeft image={services[0].image} alt={services[0].alt} title={services[0].title} description={services[0].description} link={services[0].link} />
         <CardRight image={services[1].image} alt={services[1].alt} title={services[1].title} description={services[1].description} link={services[1].link} />
         <CardLeft image={services[2].image} alt={services[2].alt} title={services[2].title} description={services[2].description} link={services[2].link} />

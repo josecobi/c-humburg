@@ -23,7 +23,7 @@ export default function CardLeft({ image, alt, title, description }: CardLeftPro
       />
                
       <div>
-        <h4 className="text-lg font-bold text-gray-900 order dark:text-zinc-100">{title}</h4>
+        <h4 className="text-xl font-bold text-gray-900 order dark:text-zinc-100">{title}</h4>
        
           {description}
         

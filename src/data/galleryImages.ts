@@ -12,6 +12,11 @@ import image10PortHighlight from "@/images/photos/portfolio-highlights/10.jpg";
 import image11PortHighlight from "@/images/photos/portfolio-highlights/11.jpeg";
 import image12PortHighlight from "@/images/photos/portfolio-highlights/12.jpg";
 import image13PortHighlight from "@/images/photos/portfolio-highlights/13.jpg";
+import image14PortHighlight from "@/images/photos/portfolio-highlights/14.png";
+import image15PortHighlight from "@/images/photos/portfolio-highlights/15.png";
+import image16PortHighlight from "@/images/photos/portfolio-highlights/16.png";
+import image17PortHighlight from "@/images/photos/portfolio-highlights/17.png";
+
 
 export const imagesPortHighlight = [
   {
@@ -41,6 +46,19 @@ export const imagesPortHighlight = [
     scale: 1.2,
     scaleEnd: 1,
     opacityInitial: 0.6,
+  },
+      {
+    src: image11PortHighlight,
+    delay: 1.8,
+    width: 600,
+    height: 800,
+    rotateEnd: -1.2,
+    rotateInitial: 5,
+    xInitial: 40,
+    yInitial: 70,
+    scale: 1.1,
+    scaleEnd: 1,
+    opacityInitial: 0.85,
   },
   {
     src: image3PortHighlight,
@@ -145,20 +163,7 @@ export const imagesPortHighlight = [
     scale: 1.2,
     scaleEnd: 1,
     opacityInitial: 0.8,
-  },
-  {
-    src: image11PortHighlight,
-    delay: 1.8,
-    width: 600,
-    height: 800,
-    rotateEnd: -1.2,
-    rotateInitial: 5,
-    xInitial: 40,
-    yInitial: 70,
-    scale: 1.1,
-    scaleEnd: 1,
-    opacityInitial: 0.85,
-  },
+  }, 
   {
     src: image12PortHighlight,
     delay: 2.1,
@@ -185,6 +190,61 @@ export const imagesPortHighlight = [
     scaleEnd: 1,
     opacityInitial: 0.75,
   },
+   {
+    src: image16PortHighlight,
+    delay: 2.7,
+    width: 600,
+    height: 800,
+    rotateEnd: -2,
+    rotateInitial: 8,
+    xInitial: -60,
+    yInitial: 30,
+    scale: 1.1,
+    scaleEnd: 1,
+    opacityInitial: 0.85,
+  },
+
+  {
+    src: image14PortHighlight,
+    delay: 2.4,
+    width: 600,
+    height: 800,
+    rotateEnd: -1.5,
+    rotateInitial: -10,
+    xInitial: -90,
+    yInitial: 40,
+    scale: 1.15,
+    scaleEnd: 1,
+    opacityInitial: 0.8,
+  },
+  {
+    src: image15PortHighlight,
+    delay: 2.55,
+    width: 600,
+    height: 800,
+    rotateEnd: 2,
+    rotateInitial: 15,
+    xInitial: 100,
+    yInitial: -60,
+    scale: 1.25,
+    scaleEnd: 1,
+    opacityInitial: 0.7,
+  },
+  
+  {
+    src: image17PortHighlight,
+    delay: 2.85,
+    width: 600,
+    height: 800,
+    rotateEnd: 1,
+    rotateInitial: -5,
+    xInitial: 50,
+    yInitial: 80,
+    scale: 1.05,
+    scaleEnd: 1,
+    opacityInitial: 0.9,
+  },
+
 ];
 
 // Behind the Scenes
@@ -195,6 +255,11 @@ import image4BehindScenes from "@/images/photos/behind-scenes/4.jpg";
 import image5BehindScenes from "@/images/photos/behind-scenes/5.jpg";
 import image6BehindScenes from "@/images/photos/behind-scenes/6.jpg";
 import image7BehindScenes from "@/images/photos/behind-scenes/7.jpg";
+import image8BehindScenes from "@/images/photos/behind-scenes/8.jpg";
+import image9BehindScenes from "@/images/photos/behind-scenes/9.jpeg";
+import image10BehindScenes from "@/images/photos/behind-scenes/10.jpg";
+import image11BehindScenes from "@/images/photos/behind-scenes/11.jpg";
+import image12BehindScenes from "@/images/photos/behind-scenes/12.jpg";
 
 export const imagesBehindScenes = [
   {
@@ -226,7 +291,7 @@ export const imagesBehindScenes = [
     rotateInitial: -10,
     xInitial: 50,
     yInitial: 60,
-    scale: 1.5,
+    scale: 1.4,
     scaleEnd: 1.1,
     opacityInitial: 0.85,
   },
@@ -270,8 +335,64 @@ export const imagesBehindScenes = [
     rotateInitial: -12,
     xInitial: 70,
     yInitial: 20,
-    scale: 1.5,
+    scale: 1.4,
     scaleEnd: 1.05,
     opacityInitial: 0.8,
   },
+  {
+    src: image8BehindScenes,
+    delay: 1.35,
+    rotateEnd: -2.5,
+    rotateInitial: 10,
+    xInitial: -80,
+    yInitial: 40,
+    scale: 1.2,
+    scaleEnd: 0.95,
+    opacityInitial: 0.75,
+  },
+  {
+    src: image9BehindScenes,
+    delay: 1.5,
+    rotateEnd: 2,
+    rotateInitial: -15,
+    xInitial: 90,
+    yInitial: -30,
+    scale: 1.3,
+    scaleEnd: 1,
+    opacityInitial: 0.7,
+  },
+  {
+    src: image10BehindScenes,
+    delay: 1.65,
+    rotateEnd: -1.5,
+    rotateInitial: 5,
+    xInitial: -50,
+    yInitial: 60,
+    scale: 1.2,
+    scaleEnd: 0.9,
+    opacityInitial: 0.85,
+  },
+  {
+    src: image11BehindScenes,
+    delay: 1.8,
+    rotateEnd: 1,
+    rotateInitial: -8,
+    xInitial: 40,
+    yInitial: -20,
+    scale: 1.2,
+    scaleEnd: 1,
+    opacityInitial: 0.8,
+  },
+  {
+    src: image12BehindScenes,
+    delay: 2.0,
+    rotateEnd: -0.5,
+    rotateInitial: 3,
+    xInitial: -30,
+    yInitial: 30,
+    scale: 1.05,
+    scaleEnd: 0.67,
+    opacityInitial: 0.9,
+    transformOrigin: "top center",
+  },                   
 ];

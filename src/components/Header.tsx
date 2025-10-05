@@ -166,7 +166,7 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex rounded-full justify-around bg-white/90 px-8 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 space-x-2 min-w-[700px]">
         <NavItem href="/">Home</NavItem>
         <NavItem href="/ads">Ads & Events</NavItem>
         <NavItem href="/ads">Movies & Tv</NavItem>
@@ -338,6 +338,7 @@ export function Header() {
 
       setProperty('--avatar-border-transform', borderTransform)
       setProperty('--avatar-border-opacity', scale === toScale ? '1' : '0')
+      setProperty('--avatar-name-opacity', String((scale - toScale) / (1 - toScale)))
     }
 
     function updateStyles() {
@@ -359,7 +360,7 @@ export function Header() {
   return (
     <>
       <header
-        className="pointer-events-none relative z-50 flex flex-none flex-col"
+        className="pointer-events-none relative z-50 flex flex-none flex-col bg-gradient-to-b from-black/30 to-transparent sm:bg-none"
         style={{
           height: 'var(--header-height)',
           marginBottom: 'var(--header-mb)',
@@ -385,9 +386,9 @@ export function Header() {
                     'var(--header-inner-position)' as React.CSSProperties['position'],
                 }}
               >
-                <div className="relative">
+                <div className="relative hidden md:block">
                   <AvatarContainer
-                    className="absolute top-3 left-0 origin-left transition-opacity"
+                    className="absolute top-3 left-0 origin-left transition-opacity "
                     style={{
                       opacity: 'var(--avatar-border-opacity, 0)',
                       transform: 'var(--avatar-border-transform)',
@@ -403,6 +404,8 @@ export function Header() {
                       style={{
                         transform: 'scale(var(--avatar-name-scale, 2))',
                         transformOrigin: 'left center',
+                        opacity: 'var(--avatar-name-opacity, 1)', // Only the span fades out
+                        transition: 'opacity 0.2s',
                       }}
                     >
                       Claudia Humburg
@@ -451,11 +454,12 @@ export function Header() {
         </div>
       </header>
       {isHomePage && (
-        <div
-          className="flex-none"
-          style={{ height: 'var(--content-offset)' }}
-        />
-      )}
+  <div
+    className="flex-none sm:block hidden"
+    style={{ height: 'var(--content-offset)' }}
+  />
+)}
+
     </>
   )
 }
