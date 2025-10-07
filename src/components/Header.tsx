@@ -124,11 +124,12 @@ function MobileNavigation(
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
             <MobileNavItem href="/">Home</MobileNavItem>
-            <MobileNavItem href="/ads">Ads & Events</MobileNavItem>
-            <MobileNavItem href="/ads">Movies & Tv</MobileNavItem>
-            <MobileNavItem href="/ads">Body & Face</MobileNavItem>
+            <MobileNavItem href="/adsEvents">Ads & Events</MobileNavItem>
+            <MobileNavItem href="/moviesTv">Movies & Tv</MobileNavItem>
+            <MobileNavItem href="/bodyFace">Body & Face</MobileNavItem>
             <MobileNavItem href="/bio">Bio</MobileNavItem>
             <MobileNavItem href="/contact">Contact</MobileNavItem>
+            {/* <MobileNavItem href="https://artbyclaudiahumburg.com/">Humburg Art</MobileNavItem> */}
           </ul>
         </nav>
       </PopoverPanel>
@@ -168,13 +169,14 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full justify-around bg-white/90 px-8 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 space-x-2 min-w-[700px]">
+      <ul className="flex rounded-full justify-around bg-white/90 px-8 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 space-x-2 min-w-[800px]">
         <NavItem href="/">Home</NavItem>
-        <NavItem href="/ads">Ads & Events</NavItem>
-        <NavItem href="/ads">Movies & Tv</NavItem>
-        <NavItem href="/ads">Body & Face</NavItem>
+        <NavItem href="/adsEvents">Ads & Events</NavItem>
+        <NavItem href="/moviesTv">Movies & Tv</NavItem>
+        <NavItem href="/bodyFace">Body & Face</NavItem>
         <NavItem href="/bio">Bio</NavItem>
         <NavItem href="/contact">Contact</NavItem>
+        {/* <NavItem href="https://artbyclaudiahumburg.com/">Humburg Art</NavItem> */}
       </ul>
     </nav>
   )
@@ -449,7 +451,7 @@ export function Header() {
               <div className="flex items-center justify-end md:flex-1 space-x-4 pointer-events-auto">
                 <ThemeToggle />
 
-                <Link
+                {/* <Link
                   href="https://www.imdb.com/name/nm3732309/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -460,7 +462,7 @@ export function Header() {
                     alt="IMDb"
                     className="h-6 w-6 md:h-12 md:w-12 drop-shadow-lg relative top-[1px]"
                   />
-                </Link>
+                </Link> */}
               </div>
 
                
