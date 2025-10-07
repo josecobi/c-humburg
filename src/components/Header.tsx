@@ -15,6 +15,8 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
+import imdb from '@/images/logos/IMDB-logo.svg'
+
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -444,12 +446,26 @@ export function Header() {
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
-              <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto">
-                  <ThemeToggle />
-                </div>
+              <div className="flex items-center justify-end md:flex-1 space-x-4 pointer-events-auto">
+                <ThemeToggle />
+
+                <Link
+                  href="https://www.imdb.com/name/nm3732309/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center p-1.5 rounded-full transition-transform hover:scale-110"
+                >
+                  <Image
+                    src={imdb}
+                    alt="IMDb"
+                    className="h-6 w-6 md:h-12 md:w-12 drop-shadow-lg relative top-[1px]"
+                  />
+                </Link>
               </div>
+
+               
             </div>
+           
           </Container>
         </div>
       </header>
