@@ -26,7 +26,7 @@ export default function Photos({ images }: PhotoProps) {
   }, [images.length]);
 
   return (
-    <div className="relative mt-0 sm:mt-20 w-full min-h-screen sm:min-h-0">
+    <div className="relative mt-0 sm:mt-12 md:mt-16 lg:mt-20 w-full min-h-screen sm:min-h-0">
 
       {/* 📱 Mobile → Fullscreen slideshow with overlay text */}
       <div className="absolute top-0 left-0 flex items-center justify-center h-screen w-full sm:hidden">
@@ -70,15 +70,22 @@ export default function Photos({ images }: PhotoProps) {
 
         {/* Overlay text */}
         <div className="relative z-10 px-6 text-center text-white">
-          <h1 className="text-4xl font-bold sm:text-5xl">Claudia Humburg</h1>
-          <p className="mt-4 text-lg font-medium">
-            Make Up &amp; Hair Designer
+          <h1 className="text-4xl font-bold sm:text-5xl drop-shadow-2xl">Claudia Humburg</h1>
+          <p className="mt-3 text-lg font-medium font-bebas tracking-wider drop-shadow-lg">
+            MAKE UP &amp; HAIR DESIGNER
           </p>
-           <div className="flex items-start gap-2 max-w-xl">
-          <Image src={emmy} alt="Award" className="inline h-14 w-14 mr-2 drop-shadow-lg" />
-          <p className="mt-2 text-base">
-            Nominated for 2 Primetime Emmy Awards
-          </p>
+          <div className="flex flex-col items-center justify-center gap-2 mt-6 max-w-xs mx-auto">
+            <div className="flex items-center gap-3 bg-black/60 backdrop-blur-md px-4 py-3 rounded-lg border border-[#D4AF37]/30">
+              <Image src={emmy} alt="Emmy Award" className="h-12 w-12 drop-shadow-2xl animate-shimmer flex-shrink-0" />
+              <div className="text-left">
+                <p className="text-sm font-semibold leading-tight">
+                  Nominated for
+                </p>
+                <p className="text-base font-bold text-[#D4AF37] text-gold-glow leading-tight">
+                  2 Primetime Emmy Awards
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
