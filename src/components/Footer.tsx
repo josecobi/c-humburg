@@ -12,7 +12,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+      className="transition hover:text-[#D4AF37] dark:hover:text-[#F4D03F] hover:font-medium"
     >
       {children}
     </Link>

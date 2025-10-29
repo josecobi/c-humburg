@@ -24,16 +24,15 @@ export function SideTabs() {
         href="https://www.imdb.com/name/nm0401726/?ref_=ext_shr_lnk"
         target="_blank"
         rel="noopener noreferrer"
-        // className={`
-        //   flex items-center py-0 pr-2 justify-left rounded-r-full shadow-lg transform transition-transform
-        //   hover:translate-x-[4px]
-        //   ${isDark ? 'bg-yellow-400 text-black' : 'bg-yellow-500 text-black'}
-        // `}
+        className="group relative"
         aria-label="View IMDb profile"
       >
-        <Image src={imdb} alt="IMDb" className="h-6 w-6 md:h-12 md:w-16 transform transition-transform
-        //   hover:translate-x-[4px] rounded-r-full" />
-        {/* <span className="ml-2 font-semibold hidden md:inline">IMDb</span> */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] rounded-r-full opacity-0 group-hover:opacity-20 transition-opacity blur-xl" />
+        <Image
+          src={imdb}
+          alt="IMDb"
+          className="h-6 w-6 md:h-12 md:w-16 transform transition-all group-hover:translate-x-1 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] rounded-r-full relative"
+        />
       </a>
 
       {/* Official Site Tab */}
