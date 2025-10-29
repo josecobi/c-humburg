@@ -36,7 +36,7 @@ export default function PortfolioPage() {
         <p className="text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
           Each project is an expression of transformation through color, texture, and
           emotion. Browse the galleries below to see my most recent creations, and
-          feel free to reach out if you'd like to collaborate.
+          feel free to reach out if you&apos;d like to collaborate.
         </p>
       </section>
 
