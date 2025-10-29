@@ -28,8 +28,10 @@ export function Footer() {
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <NavLink href="/">Home</NavLink>
+                <NavLink href="/adsEvents">Ads & Events</NavLink>
+                <NavLink href="/moviesTv">Movies & Tv</NavLink>
+                <NavLink href="/bodyFace">Body & Face</NavLink>
                 <NavLink href="/bio">Bio</NavLink>
-                <NavLink href="/ads">Ads</NavLink>
                 <NavLink href="/contact">Contact</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">

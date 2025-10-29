@@ -1,6 +1,6 @@
 import bigLittleLiesWide from '@/images/services/big-little-lies.jpg'
 import ladyCar from '@/images/services/lady-car.jpg'
-import bodyPaint from '@/images/services/body-face-paint.jpg'
+import bodyPaint from '@/images/services/art01.jpg'
 
 export const services = [
   {

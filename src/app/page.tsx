@@ -11,7 +11,6 @@ import { Container } from '@/components/Container'
 import {
   InstagramIcon,
 } from '@/components/SocialIcons'
-import ImdbButton from '@/components/ImdbButton'
 
 import { imagesPortHighlight, imagesBehindScenes } from '@/data/galleryImages'
 
@@ -28,6 +27,7 @@ import emmy from '@/images/logos/emmy-statuette-gold.svg'
 import imdb from '@/images/logos/IMDB-logo.svg'
 import { services } from '@/data/services'
 import ClientMasonryGallery from "@/components/Gallery/ClientMasonryGallery";
+import { SideTabs } from "@/components/SideTabs";
 
 
 function SocialLink({
@@ -48,7 +48,7 @@ export default async function Home() {
 
   return (
     <>
-    
+      <SideTabs />
       <Container className="mt-9 hidden md:block">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">

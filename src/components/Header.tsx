@@ -16,6 +16,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 import imdb from '@/images/logos/IMDB-logo.svg'
+import IMDbIcon from './ImdbIcon'
 
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -122,16 +123,38 @@ function MobileNavigation(
           </h2>
         </div>
         <nav className="mt-6">
-          <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/">Home</MobileNavItem>
-            <MobileNavItem href="/adsEvents">Ads & Events</MobileNavItem>
-            <MobileNavItem href="/moviesTv">Movies & Tv</MobileNavItem>
-            <MobileNavItem href="/bodyFace">Body & Face</MobileNavItem>
-            <MobileNavItem href="/bio">Bio</MobileNavItem>
-            <MobileNavItem href="/contact">Contact</MobileNavItem>
-            {/* <MobileNavItem href="https://artbyclaudiahumburg.com/">Humburg Art</MobileNavItem> */}
-          </ul>
-        </nav>
+  <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+    <MobileNavItem href="/">Home</MobileNavItem>
+    <MobileNavItem href="/ads">Ads & Events</MobileNavItem>
+    <MobileNavItem href="/ads">Movies & Tv</MobileNavItem>
+    <MobileNavItem href="/ads">Body & Face</MobileNavItem>
+    <MobileNavItem href="/bio">Bio</MobileNavItem>
+    <MobileNavItem href="/contact">Contact</MobileNavItem>
+
+    {/* External Links */}
+    <li className="pt-4">
+      <a
+        href="https://www.imdb.com/name/nm3732309/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center space-x-2  py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800"
+      >
+        <IMDbIcon className="h-6 w-12" />
+      </a>
+    </li>
+    <li className="pt-2">
+      <a
+        href="https://artbyclaudiahumburg.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center space-x-2 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800"
+      >
+        <span>Art by Claudia</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
       </PopoverPanel>
     </Popover>
   )
